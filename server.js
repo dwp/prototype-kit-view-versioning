@@ -61,6 +61,7 @@ var useHttps = process.env.USE_HTTPS || config.useHttps
 useHttps = useHttps.toLowerCase()
 
 var useDocumentation = (config.useDocumentation === 'true')
+var useViewVersioning = (config.useViewVersioning === 'true')
 
 // Promo mode redirects the root to /docs - so our landing page is docs when published on heroku
 var promoMode = process.env.PROMO_MODE || 'false'
@@ -285,6 +286,13 @@ app.get(/\.html?$/i, function (req, res) {
 })
 
 // Auto render any view that exists
+
+// Prioritise versioned view over default
+if (useViewVersioning) {
+  app.get('/default/*', utils.redirectToVersion, function (req, res, next) {
+    next()
+  })
+}
 
 // App folder routes get priority
 app.get(/^([^.]+)$/, function (req, res, next) {
