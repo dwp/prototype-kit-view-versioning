@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      Hello world
+    </h1>
+    <p>This is a generic start page.</p>
+
+    <p>
+      <a href="/default/are-views-out-of-hand" class="govuk-button">Continue</a>
+    </p>
+  </div>
+</div>
+
+{% endblock %}

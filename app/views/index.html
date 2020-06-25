@@ -1,44 +1,65 @@
-
 {% extends "layout.html" %}
-
-{% block pageTitle %}
-  GOV.UK Prototype Kit
-{% endblock %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">
+      GOV.UK Prototype Kit
+      <span class="govuk-caption-xl">{{releaseVersion}}</span>
+    </h1>{{releaseVersion | log }}
+    <h2 class="govuk-heading-m">With additional view versioning functionality and example.</h2>
+    <details class="govuk-details" data-module="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          What does it do?
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p>The functionality is turned on by setting 'useViewVersioning' in config.js to 'true'.</p>
 
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
+        <p>Views then need to be kept in views/default. Views for a new version of a prototype are kept in views/v1, views/v2 etc. Only views that differ need including. A new version is then accessed by setting the 'v' parameter in the URL at the start of the new version.</p>
 
-      <h2 class="govuk-heading-m">About this page</h2>
+        <p>Links within views are always to the default version (eg. '/default/some-view'), and if the 'v' property has been set, the version specific version will be prioritised over the default equivalent. The result is less views, less duplication, and hopefully a simplified routes file.</p>
+      </div>
+    </details>
 
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
+    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <a href="/default/start-page?v=0">Default</a>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          v=0
+        </dd>
+        <dd class="govuk-summary-list__value">
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <a href="/default/start-page?v=1">Version 1</a>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          v=1
+        </dd>
+        <dd class="govuk-summary-list__value">
+          Different question page
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          <a href="/default/start-page?v=2">Version 2</a>
+        </dt>
+        <dd class="govuk-summary-list__value">
+          v=2
+        </dd>
+        <dd class="govuk-summary-list__value">
+          Different start view
+        </dd>
+      </div>
+    </dl>
 
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/docs/tutorials-and-examples">Example pages and documentation</a>
-        </li>
-        <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        </li>
-      </ul>
-    </div>
+  </div>
 </div>
 
 {% endblock %}

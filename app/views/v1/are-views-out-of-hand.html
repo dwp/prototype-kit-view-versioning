@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block beforeContent %}
+  <a href="javascript:history.go(-1)" class="govuk-back-link">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-form-group">
+      <form action="/default/views-out-of-hand-submit" method="post">
+        <fieldset class="govuk-fieldset govuk-!-margin-bottom-4" aria-describedby="views-out-of-hand-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Are your prototype views getting out of hand? (v1)
+            </h1>
+          </legend>
+          <div class="govuk-radios govuk-radios--inline">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="views-out-of-hand-yes" name="views-out-of-hand" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="views-out-of-hand-yes">
+                Yes
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="views-out-of-hand-no" name="views-out-of-hand" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="views-out-of-hand-no">
+                No
+              </label>
+            </div>
+          </div>
+        </fieldset>
+        <button data-module="govuk-button" type="submit" class="govuk-button">
+          Continue
+        </button>
+      </form>
+    </div>
+  </div>
+</div>
+
+{% endblock %}
