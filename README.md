@@ -4,7 +4,7 @@
 
 The new functionality is turned on by setting 'useViewVersioning' in config.js to 'true'.
 
-Views then need to be kept in 'views/default'. Views for a new version of a prototype are kept in 'views/v1', 'views/v2', etc. Only views that differ need including. A new version is then accessed by setting the 'v' parameter in the URL at the start of the new version (eg. '/default/start-age?v=1').
+Views then need to be kept in 'views/default'. Views for a new version of a prototype are kept in 'views/v1', 'views/v2', etc. Only views that differ need including. A new version is then accessed by setting the 'v' parameter in the URL at the start of the new version (eg. '/default/start-page?v=1').
 
 Links within views are always to the default version (eg. '/default/some-view'), and if the 'v' property has been set, the version-specific view will be prioritised over the default equivalent. The result is less views, less duplication, and hopefully a simplified routes file.
 
