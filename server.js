@@ -288,8 +288,15 @@ app.get(/\.html?$/i, function (req, res) {
 // Auto render any view that exists
 
 // Prioritise versioned view over default
+// Prioritise versioned view over default
 if (useViewVersioning) {
   app.get('/default/*', utils.redirectToVersion, function (req, res, next) {
+    next()
+  })
+}
+
+if (useViewVersioning) {
+  app.get('/v*/*', utils.checkVersion, function (req, res, next) {
     next()
   })
 }

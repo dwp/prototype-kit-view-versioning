@@ -18,16 +18,16 @@
       <div class="govuk-details__text">
         <p>The functionality is turned on by setting 'useViewVersioning' in config.js to 'true'.</p>
 
-        <p>Views then need to be kept in views/default. Views for a new version of a prototype are kept in views/v1, views/v2 etc. Only views that differ need including. A new version is then accessed by setting the 'v' parameter in the URL at the start of the new version.</p>
+        <p>Views then need to be kept in views/v0. Views for a new version of a prototype are kept in views/v1, views/v2 etc. Only views that differ need including. A new version is then accessed by setting the 'v' parameter in the URL at the start of the new version.</p>
 
-        <p>Links within views are always to the default version (eg. '/default/some-view'), and if the 'v' property has been set, the version-specific view will be prioritised over the default equivalent. The result is less views, less duplication, and hopefully a simplified routes file.</p>
+        <p>Links within views are always to a default path (eg. '/default/some-view'), and if the 'v' property has been set, the version-specific view will be prioritised over the original v0 equivalent. The result is less views, less duplication, and hopefully a simplified routes file.</p>
       </div>
     </details>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          <a href="/default/start-page?v=0">Default</a>
+          <a href="/default/start-page?v=0">Version 0</a>
         </dt>
         <dd class="govuk-summary-list__value">
           v=0
